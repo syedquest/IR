@@ -10,6 +10,7 @@ Notes for performing evtx log analysis
 ## Event Viewer Tools
 - Event viewer
 - Event log explorer
+- Powershell
 
 ## Main event logs
 - **Security.evtx**
@@ -25,3 +26,6 @@ Notes for performing evtx log analysis
         - Logon type 5 - Service that has been configured to run as a user account.
         - Logon type 7 - Unlock. User logon on to the machine after it was locked.
         - Logon type 10 - RemoteInteractive logon. It is logged when user access through Terminal Services or RDP
+    - EID 4625
+      - Failed logon events. If there are multiple entries with this event ID, it might indicate a password spraying attack.
+      - The failure information section will have the codes for the failed logon events and the reason for the failure.
