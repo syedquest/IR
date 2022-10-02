@@ -22,3 +22,6 @@ Notes for performing evtx log analysis
         - Logon type 2 - Interactive logon. It is a logon through the keyboard/screan of the system. Could also be through remote access tools such as VNC. 
         - Logon type 3 - Network logon. Access from other location in the network such as shared folder access.
         - Logon type 4 - Batch. Used by batch server. Usually, it is the schedule task. 
+        - Logon type 5 - Service that has been configured to run as a user account.
+        - Logon type 7 - Unlock. User logon on to the machine after it was locked.
+        - Logon type 10 - RemoteInteractive logon. It is logged when user access through Terminal Services or RDP
