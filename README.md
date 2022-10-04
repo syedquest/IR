@@ -7,10 +7,12 @@ Notes for performing evtx log analysis
 ## Location
 \Windows\System32\winevt\Logs
 
-## Event Viewer Tools
+## Event Viewer/Parser Tools
 - Event viewer
 - Event log explorer
 - Powershell
+- EvtxParser
+- EvtxECMD (https://github.com/EricZimmerman/evtx)
 
 ## Main event logs
 - **Security.evtx**
@@ -37,6 +39,12 @@ Notes for performing evtx log analysis
     - Event ID 4723
       - An attempt was made to change an account's password
       - Logged when the user attempted to change own password. Would also log EID 4738 (A user account was changed)
+    - Event ID 4728
+      - A member was added to a security-enabled global group
+      - This event can be seen in domain controllers.  
     - Event ID 4732
       - A member was added to a security-enabled local group
       - If the computer name is the same as the domain name, it is a SAM group
+    - Event ID 4769
+      - It is generated when there is a service ticket request
+      - If the request failed, it will populate the failure code field or Event ID 4771 will be recorded.
