@@ -51,4 +51,21 @@ Notes for performing evtx log analysis
       - It is generated when there is a service ticket request
       - If the request failed, it will populate the failure code field or Event ID 4771 will be recorded.
     - Event ID 4778
-      - A session is reconnected event occured. It might happen when the session is reconnected through RDP. Check the network section the the remote host information. 
+      - A session is reconnected event occured. It might happen when the session is reconnected through RDP. Check the network section the the remote host information.
+
+- **System.evtx**
+  - System event logs records event triggered by the OS such as system/hardware changes, drivers etc. 
+  - Below are the noteworthy event IDs
+    - Event ID 6005
+      - The event log service was started.
+      - It occurs when a service is manually started or when the system rebooted.
+    - Event ID 6006
+      - The event log service was stopped.
+      - The event ID can be seen during system shutdown/restart but if it might indicate a malicious event if it occurs several times.
+    - Event ID 7034
+      - A service terminated successfully. Check the description to see the name of the services.
+    - Event ID 7036
+      - A service was stopped or started.
+    - Event ID 7045
+      - A service was installed by the system. 
+      - Useful to see if there was a service created on the system.         
