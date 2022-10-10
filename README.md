@@ -31,6 +31,8 @@ Notes for performing evtx log analysis
     - Event ID 4625
       - Failed logon events. If there are multiple entries with this event ID, it might indicate a password spraying attack.
       - The failure information section will have the codes for the failed logon events and the reason for the failure.
+    - Event ID 4634 / Event ID 4647
+      - User log off events. Can be used to tie the EID 4624 event with the log off evnet 
     - Event ID 4648
       - A logon was attempted using explicit credential
       - An example of this event is the admin logs to a machine and access a shared drive using a different credential.
@@ -48,3 +50,5 @@ Notes for performing evtx log analysis
     - Event ID 4769
       - It is generated when there is a service ticket request
       - If the request failed, it will populate the failure code field or Event ID 4771 will be recorded.
+    - Event ID 4778
+      - A session is reconnected event occured. It might happen when the session is reconnected through RDP. Check the network section the the remote host information. 
