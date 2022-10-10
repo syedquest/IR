@@ -68,4 +68,15 @@ Notes for performing evtx log analysis
       - A service was stopped or started.
     - Event ID 7045
       - A service was installed by the system. 
-      - Useful to see if there was a service created on the system.         
+      - Useful to see if there was a service created on the system.
+
+- **Microsoft-Windows-TaskScheduler%4Operational.evtx (Schedule task log)**
+  - Records activity related to schedule task on the machine. Here are the event ID for schedule task log
+    - Event ID 106
+      - Scheduled task created. When a user created a schedule task, this event ID will be recorded with the name of the user who created the task.
+    - Event ID 141
+      - Scheduled task deleted. The event ID will have the user and what task that has been deleted.
+    - Event ID 200
+      - Scheduled task executed. This event ID can be tied with EID 106 to see the user who created the task. 
+    - Event ID 201
+      - Scheduled task completed. After EID 200 is logged, this event ID might comes next.         
