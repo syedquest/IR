@@ -18,6 +18,8 @@ Notes for performing evtx log analysis
 - **Security.evtx**
   - Records log related to account management, account logon, share access events
   - Notable event IDs:
+
+#### Sessions logon events
     - Event ID 4624
       - Logon to the system events
       - Take note of the account name, account domain, workstation name, source network address, and logon type
@@ -36,6 +38,8 @@ Notes for performing evtx log analysis
     - Event ID 4648
       - A logon was attempted using explicit credential
       - An example of this event is the admin logs to a machine and access a shared drive using a different credential.
+    
+#### Account management
     - Event ID 4720
       - A user account was created
     - Event ID 4723
@@ -47,12 +51,19 @@ Notes for performing evtx log analysis
     - Event ID 4732
       - A member was added to a security-enabled local group
       - If the computer name is the same as the domain name, it is a SAM group
+    
+#### Kerberos Authentication     
+    - Event ID 4768 - TGT Granted
     - Event ID 4769
       - It is generated when there is a service ticket request
       - If the request failed, it will populate the failure code field or Event ID 4771 will be recorded.
+    - Event ID 4771 - Authentication failed
     - Event ID 4778
       - A session is reconnected event occured. It might happen when the session is reconnected through RDP. Check the network section the the remote host information.
-
+      
+#### Event log manipulation
+    - Event ID 1102
+      - Audit log cleared
 - **System.evtx**
   - System event logs records event triggered by the OS such as system/hardware changes, drivers etc. 
   - Below are the noteworthy event IDs
